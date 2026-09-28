@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hackathonapp-react
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hackathonapp-react
+  template:
+    metadata:
+      labels:
+        app: hackathonapp-react
+    spec:
+      containers:
+      - name: web
+        image: nginx:alpine
+        ports:
+        - containerPort: 80
